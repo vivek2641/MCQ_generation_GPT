@@ -6,7 +6,7 @@ app1 = FastAPI()
 
 openai.api_key = "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"
 
-
+# this endpoint is for only selected paragraph in CSV
 @app1.get("/mcq")
 def index():
     data = pd.read_csv("data.csv")
@@ -42,7 +42,7 @@ def index():
             paragraph+"\n\n" + result + "\n------------------------------------------------------------------------------\n")
     return result
 
-
+# this endpoint is for all the paragraphs of CSV and output save in log file 
 @app1.get("/data")
 def index():
     data = pd.read_csv("data.csv")
